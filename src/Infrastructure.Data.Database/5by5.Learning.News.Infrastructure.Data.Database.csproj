@@ -5,4 +5,9 @@
     <RootNamespace>_5by5.Learning.News.Infrastructure.Data.Database</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="MongoDB\" />
+    <Folder Include="Redis\" />
+  </ItemGroup>
+
 </Project>
