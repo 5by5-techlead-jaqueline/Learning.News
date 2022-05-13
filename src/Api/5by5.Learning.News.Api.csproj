@@ -5,5 +5,9 @@
     <RootNamespace>_5by5.Learning.News.Api</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\5by5.Learning.News.Domain.csproj" />
+  </ItemGroup>
+
 
 </Project>
