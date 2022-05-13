@@ -4,8 +4,8 @@ using System.Text;
 
 namespace _5by5.Learning.News.Domain
 {
-    public interface ITest
+    public interface IDomain
     {
-        string Message();
+        string MessageDomain();
     }
 }

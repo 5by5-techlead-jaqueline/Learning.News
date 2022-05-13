@@ -4,11 +4,11 @@ using System.Text;
 
 namespace _5by5.Learning.News.Domain
 {
-    public class Test : ITest
+    public class DomainClass : IDomain
     {
-        public string Message()
+        public string MessageDomain()
         {
-            return $"Hello world!";
+            return $"NotImplemented Domain yet";
         }
     }
 }

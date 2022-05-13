@@ -9,5 +9,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\5by5.Learning.News.Domain.csproj" />
+    <ProjectReference Include="..\Infrastructure.Data.Query\5by5.Learning.News.Infrastructure.Data.Query.csproj" />
+  </ItemGroup>
+
 
 </Project>
