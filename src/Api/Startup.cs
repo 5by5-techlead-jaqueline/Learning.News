@@ -1,5 +1,4 @@
-using _5by5.Learning.News.Domain;
-using _5by5.Learning.News.Infrastructure.Data.Query;
+using _5by5.Learning.News.Api.Infrastructure.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -26,9 +25,10 @@ namespace _5by5.Learning.News.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "NewsAPI", Version = "v1" });
             });
-            services.AddScoped<IDomain, DomainClass>();
-            services.AddScoped<IDataQuery, DataQuery>();
+            var Bootstrap = new Bootstrapper(services);
+            Bootstrap.structureScoped();
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
