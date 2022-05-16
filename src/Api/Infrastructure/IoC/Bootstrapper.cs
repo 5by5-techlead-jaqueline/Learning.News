@@ -13,7 +13,7 @@ namespace _5by5.Learning.News.Api.Infrastructure.IoC
             _services = services;
         }
 
-        public void structureScoped()
+        public void StructureScoped()
         {
             _services.AddScoped<IDomain, DomainClass>();
             _services.AddScoped<IDataQuery, DataQuery>();

@@ -14,7 +14,7 @@ namespace _5by5.Learning.News.Api.Controllers
         }
 
         [HttpGet]
-        public string domain()
+        public string Domain()
         {
             var MessageDomain = _domain.MessageDomain();
             return MessageDomain;

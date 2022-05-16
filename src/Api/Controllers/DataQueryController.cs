@@ -14,7 +14,7 @@ namespace _5by5.Learning.News.Api.Controllers
         }
 
         [HttpGet]
-        public string dataQuery()
+        public string DataQuery()
         {
             var MessageDataQuery = _dataQuery.MessageDataQuery();
             return MessageDataQuery;
