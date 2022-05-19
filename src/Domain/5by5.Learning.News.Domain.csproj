@@ -5,4 +5,8 @@
     <RootNamespace>_5by5.Learning.News.Domain</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CrossCutting.Configuration\5by5.Learning.News.CrossCutting.Configuration.csproj" />
+  </ItemGroup>
+
 </Project>

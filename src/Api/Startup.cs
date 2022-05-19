@@ -25,8 +25,8 @@ namespace _5by5.Learning.News.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "NewsAPI", Version = "v1" });
             });
-            var Bootstrap = new Bootstrapper(services);
-            Bootstrap.StructureScoped();
+            var Bootstrapper = new Bootstrapper(services);
+            Bootstrapper.StructureScoped();
         }
 
 
