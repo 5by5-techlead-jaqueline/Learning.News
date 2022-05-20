@@ -11,11 +11,9 @@ namespace _5by5.Learning.News.Api.Controllers
         [HttpGet]
         public string Get()
         {
-            var firstTest = AppSettings.Settings.NoticesApi.Select(x => x.UrlNewsApi).ToArray();
-                
-            //var secundaryTest = AppSettings.Settings.NoticesApi.FirstOrDefault().UrlNewsApi;
+            var firstTest = AppSettings.Settings.NoticesApi.FirstOrDefault().Address;
 
-            return firstTest.ToString();
+            return firstTest;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace _5by5.Learning.News.CrossCutting.Configuration
     {
         public static AppSettings Settings => FileConfiguration<AppSettings>.GetSettingsFromDifferentFile($"{AppDomain.CurrentDomain.BaseDirectory}appsettings.json");
 
-        [JsonProperty("NoticesApi")]
+        [JsonProperty("serviceClients")]
         public NoticesApi[] NoticesApi { get; set; }
     }
 }

@@ -4,7 +4,7 @@ namespace _5by5.Learning.News.CrossCutting.Configuration.Base
 {
     public class AppSetting
     {
-        [JsonProperty("ApplicationName")]
+        [JsonProperty("applicationName")]
         public string ApplicationName { get; set; }
     }
 }
