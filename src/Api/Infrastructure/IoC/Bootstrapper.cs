@@ -1,7 +1,7 @@
-﻿using _5by5.Learning.News.Domain;
+﻿using _5by5.Learning.News.CrossCutting.Configuration;
+using _5by5.Learning.News.Domain;
 using _5by5.Learning.News.Infrastructure.Data.Query;
 using Microsoft.Extensions.DependencyInjection;
-using System.Threading.Tasks;
 
 namespace _5by5.Learning.News.Api.Infrastructure.IoC
 {
