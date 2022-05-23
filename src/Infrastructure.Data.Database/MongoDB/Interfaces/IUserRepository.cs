@@ -9,7 +9,7 @@ namespace _5by5.Learning.News.Infrastructure.Data.Database.MongoDB.Interfaces
     {
         public UserEntity Get(string name);
         public UserEntity Create(UserEntity userEntity);
-        public void Update(string name, UserEntity userEntityIn);
+        public void Update(string id, UserEntity userEntityIn);
         public void Remove(string name);
     }
 }
