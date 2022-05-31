@@ -1,4 +1,5 @@
 using _5by5.Learning.News.Api.Infrastructure.IoC;
+using _5by5.Learning.News.CrossCutting.Configuration.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +21,7 @@ namespace _5by5.Learning.News.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<DatabaseSettings>(Configuration.GetSection("mongoDB"));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -27,6 +29,7 @@ namespace _5by5.Learning.News.Api
             });
             var Bootstrapper = new Bootstrapper(services);
             Bootstrapper.StructureScoped();
+            Bootstrapper.InjectDataBase(Configuration);
         }
 
 

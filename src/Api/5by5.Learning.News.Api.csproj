@@ -5,12 +5,23 @@
     <RootNamespace>_5by5.Learning.News.Api</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>    <Content Remove="appsettings.json" />
+  </ItemGroup>
+
   <ItemGroup>
+    <None Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Bson" Version="2.15.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\5by5.Learning.News.Domain.csproj" />
+    <ProjectReference Include="..\Infrastructure.Data.Database\5by5.Learning.News.Infrastructure.Data.Database.csproj" />
     <ProjectReference Include="..\Infrastructure.Data.Query\5by5.Learning.News.Infrastructure.Data.Query.csproj" />
   </ItemGroup>
 

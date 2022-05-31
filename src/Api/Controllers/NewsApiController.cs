@@ -11,7 +11,7 @@ namespace _5by5.Learning.News.Api.Controllers
         [HttpGet]
         public string Get()
         {
-            var firstTest = AppSettings.Settings.NoticesApi.FirstOrDefault().Address;
+            var firstTest = AppSettings.Settings.ServiceClientsSettings.FirstOrDefault().Address;
 
             return firstTest;
         }
