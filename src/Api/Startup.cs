@@ -1,5 +1,4 @@
 using _5by5.Learning.News.Api.Infrastructure.IoC;
-using _5by5.Learning.News.CrossCutting.Configuration.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,17 +20,19 @@ namespace _5by5.Learning.News.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<DatabaseSettings>(Configuration.GetSection("mongoDB"));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "NewsAPI", Version = "v1" });
             });
             var Bootstrapper = new Bootstrapper(services);
+
             Bootstrapper.StructureScoped();
+
+            Bootstrapper.InjectionResilienceSettings("ApiNews");
+            
             Bootstrapper.InjectDataBase(Configuration);
         }
-
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
