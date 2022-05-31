@@ -2,6 +2,7 @@ using _5by5.Learning.News.Api.Infrastructure.IoC;
 using _5by5.Learning.News.CrossCutting.Configuration;
 using _5by5.Learning.News.Infrastructure.Service.Interfaces;
 using _5by5.Learning.News.Infrastructure.Service.ServiceHandlers;
+using _5by5.Learning.News.CrossCutting.Configuration.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -27,6 +28,7 @@ namespace _5by5.Learning.News.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<DatabaseSettings>(Configuration.GetSection("mongoDB"));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -43,6 +45,7 @@ namespace _5by5.Learning.News.Api
 
             services.AddHttpClient<INewsApiService, NewsApiService>(x => x.BaseAddress = new Uri(AppSettings.Settings.NoticesApi.FirstOrDefault(x => x.Id == "ApiNews").Address))
                 .AddPolicyHandler(retryPolicy);
+            Bootstrapper.InjectDataBase(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
