@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Polly" Version="7.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CrossCutting.Configuration\5by5.Learning.News.CrossCutting.Configuration.csproj" />
   </ItemGroup>
 

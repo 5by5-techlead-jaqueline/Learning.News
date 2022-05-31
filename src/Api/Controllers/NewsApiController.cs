@@ -1,6 +1,6 @@
-﻿using _5by5.Learning.News.CrossCutting.Configuration;
+﻿using _5by5.Learning.News.Infrastructure.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace _5by5.Learning.News.Api.Controllers
 {
@@ -8,12 +8,21 @@ namespace _5by5.Learning.News.Api.Controllers
     [ApiController]
     public class NewsApiController : ControllerBase
     {
-        [HttpGet]
-        public string Get()
+        private readonly INewsApiService _newsApiService;
+        public NewsApiController(INewsApiService newsApiService)
         {
-            var firstTest = AppSettings.Settings.NoticesApi.FirstOrDefault().Address;
+            _newsApiService = newsApiService;
+        }
 
-            return firstTest;
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            var response = await _newsApiService.GetNewsAsync();
+            if (response == null)
+            {
+                return NotFound();
+            }
+            return Ok(response);
         }
     }
 }
