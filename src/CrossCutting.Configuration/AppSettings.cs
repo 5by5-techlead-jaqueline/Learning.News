@@ -12,7 +12,7 @@ namespace _5by5.Learning.News.CrossCutting.Configuration
         [JsonProperty("serviceClients")]
         public NoticesApi[] NoticesApi { get; set; }
 
-        [JsonProperty("mongoDB")]
+        [JsonProperty("DatabaseSettings")]
         public Mongo Mongodb { get; set; }
     }
 }
