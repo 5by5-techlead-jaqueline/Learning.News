@@ -2,7 +2,7 @@
 
 namespace _5by5.Learning.News.CrossCutting.Configuration.Models
 {
-    public class Mongo
+    public class DatabaseSettings
     {
         [JsonProperty("databaseName")]
         public string DatabaseName { get; set; }
@@ -10,7 +10,7 @@ namespace _5by5.Learning.News.CrossCutting.Configuration.Models
         [JsonProperty("connectionString")]
         public string ConnectionString { get; set; }
 
-        [JsonProperty("userColletionName")]
-        public string UserColletionName { get; set; }
+        [JsonProperty("userCollectionName")]
+        public string UserCollectionName { get; set; }
     }
 }
