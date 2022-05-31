@@ -19,7 +19,7 @@ namespace _5by5.Learning.News.Infrastructure.Service.ServiceHandlers
 
         public async Task<NewsApiResponse> GetNewsAsync()
         {
-            var url = AppSettings.Settings.NoticesApi.FirstOrDefault(x => x.Id == "ApiNews").Address;
+            var url = AppSettings.Settings.ServiceClientsSettings.FirstOrDefault(x => x.Id == "ApiNews").Address;
             HttpResponseMessage response = await _httpClient.GetAsync(url);
 
             if (response.StatusCode != HttpStatusCode.OK)

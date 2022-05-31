@@ -4,6 +4,9 @@ namespace _5by5.Learning.News.CrossCutting.Configuration.Models
 {
     public class DatabaseSettings
     {
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
         [JsonProperty("databaseName")]
         public string DatabaseName { get; set; }
 
