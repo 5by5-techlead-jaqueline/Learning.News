@@ -1,4 +1,7 @@
 using _5by5.Learning.News.Api.Infrastructure.IoC;
+using _5by5.Learning.News.Domain.Commands.v1.User.Post;
+using _5by5.Learning.News.Infrastructure.Data.Query.Queries.v1.User.Get;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -24,6 +27,7 @@ namespace _5by5.Learning.News.Api
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "NewsAPI", Version = "v1" });
+                c.CustomSchemaIds(type => type.ToString());
             });
             var Bootstrapper = new Bootstrapper(services);
 
@@ -32,6 +36,8 @@ namespace _5by5.Learning.News.Api
             Bootstrapper.InjectionResilienceSettings("ApiNews");
             
             Bootstrapper.InjectDataBase(Configuration);
+            Bootstrapper.InjectMediator();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

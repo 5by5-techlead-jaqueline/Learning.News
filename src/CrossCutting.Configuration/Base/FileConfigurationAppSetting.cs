@@ -5,7 +5,7 @@ using System.IO;
 namespace _5by5.Learning.News.CrossCutting.Configuration.Base
 {
     [Serializable]
-    public static class FileConfiguration<TSetting> where TSetting : AppSetting
+    public static class FileConfigurationAppSetting<TSetting> where TSetting : AppSetting
     {
         public static TSetting GetSettingsFromDifferentFile(string filename)
         {

@@ -6,11 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="10.0.1" />
     <PackageReference Include="Polly" Version="7.2.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CrossCutting.Configuration\5by5.Learning.News.CrossCutting.Configuration.csproj" />
+    <ProjectReference Include="..\Infrastructure.Data.Database\5by5.Learning.News.Infrastructure.Data.Database.csproj" />
   </ItemGroup>
 
 </Project>

@@ -7,7 +7,7 @@ namespace _5by5.Learning.News.CrossCutting.Configuration
 {
     public class AppSettings : AppSetting
     {
-        public static AppSettings Settings => FileConfiguration<AppSettings>.GetSettingsFromDifferentFile($"{AppDomain.CurrentDomain.BaseDirectory}appsettings.json");
+        public static AppSettings Settings => FileConfigurationAppSetting<AppSettings>.GetSettingsFromDifferentFile($"{AppDomain.CurrentDomain.BaseDirectory}appsettings.json");
 
         [JsonProperty("serviceClients")]
         public ServiceClientsSettings[] ServiceClientsSettings { get; set; }

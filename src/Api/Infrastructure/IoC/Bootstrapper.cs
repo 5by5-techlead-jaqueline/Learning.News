@@ -1,10 +1,13 @@
 ﻿using _5by5.Learning.News.CrossCutting.Configuration;
 using _5by5.Learning.News.Domain;
+using _5by5.Learning.News.Domain.Commands.v1.User.Post;
 using _5by5.Learning.News.Infrastructure.Data.Database.MongoDB.Interfaces;
 using _5by5.Learning.News.Infrastructure.Data.Database.MongoDB.Repositories;
 using _5by5.Learning.News.Infrastructure.Data.Query;
+using _5by5.Learning.News.Infrastructure.Data.Query.Queries.v1.User.Get;
 using _5by5.Learning.News.Infrastructure.Service.Interfaces;
 using _5by5.Learning.News.Infrastructure.Service.ServiceHandlers;
+using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -52,5 +55,11 @@ namespace _5by5.Learning.News.Api.Infrastructure.IoC
             _services.AddHttpClient<INewsApiService, NewsApiService>(x => x.BaseAddress = new Uri(newsApiServiceClient.Address))
                 .AddPolicyHandler(retryPolicy);
         }
+        public void InjectMediator()
+        {
+            _services.AddMediatR(typeof(PostUserCommandHandler).Assembly);
+            _services.AddMediatR(typeof(GetUserCommandHandler).Assembly);
+        }
+
     }
 }

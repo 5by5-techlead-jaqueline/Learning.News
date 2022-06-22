@@ -1,5 +1,8 @@
-﻿using _5by5.Learning.News.Domain;
+﻿using _5by5.Learning.News.CrossCutting.Configuration;
+using _5by5.Learning.News.Domain;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace _5by5.Learning.News.Api.Controllers
 {
@@ -13,11 +16,18 @@ namespace _5by5.Learning.News.Api.Controllers
             _domain = domain;
         }
 
+        //[HttpGet]
+        //public string Domain()
+        //{
+        //    var MessageDomain = _domain.MessageDomain();
+        //    return MessageDomain;
+        //}
+
         [HttpGet]
-        public string Domain()
+        public List<string> GetCountries()
         {
-            var MessageDomain = _domain.MessageDomain();
-            return MessageDomain;
+            var test = CustomSettings.Settings.Preferences.Categories;
+            return test;
         }
     }
 }
