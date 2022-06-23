@@ -1,0 +1,29 @@
+{
+  "preferences": {
+    "categories": [
+      "sport",
+      "health",
+      "car",
+      "business",
+      "entertainment",
+      "family",
+      "politics",
+      "religion",
+      "science",
+      "technology",
+      "travel",
+      "food",
+      "government",
+      "tourism",
+      "education",
+      "manufacturing",
+      "retail",
+      "animal",
+      "economics"
+    ],
+    "countries": [
+      "br",
+      "us"
+    ]
+  }
+}

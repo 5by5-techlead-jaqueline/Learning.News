@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using _5by5.Learning.News.Infrastructure.Data.Database.MongoDB.Entities;
+﻿using _5by5.Learning.News.Infrastructure.Data.Database.MongoDB.Entities;
 using _5by5.Learning.News.Infrastructure.Data.Database.MongoDB.Interfaces;
 using MongoDB.Driver;
+using System.Collections.Generic;
 
 namespace _5by5.Learning.News.Infrastructure.Data.Database.MongoDB.Repositories
 {
@@ -16,8 +14,6 @@ namespace _5by5.Learning.News.Infrastructure.Data.Database.MongoDB.Repositories
             var database = client.GetDatabase(settings.DatabaseName);
             _users = database.GetCollection<UserEntity>(settings.UserColletionName);
         }
-   
-
 
         public List<UserEntity> GetAll() =>
             _users.Find(UserEntity => true).ToList();
