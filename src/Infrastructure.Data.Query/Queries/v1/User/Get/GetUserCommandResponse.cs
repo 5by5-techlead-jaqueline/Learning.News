@@ -14,7 +14,6 @@ namespace _5by5.Learning.News.Infrastructure.Data.Query.Queries.v1.User.Get
         {
             public List<string> Category { get; set; }
             public string Country { get; set; }
-
         }
     }
 }

@@ -23,4 +23,3 @@ namespace _5by5.Learning.News.Infrastructure.Data.Database.MongoDB.Entities
         }
     }
 }
-

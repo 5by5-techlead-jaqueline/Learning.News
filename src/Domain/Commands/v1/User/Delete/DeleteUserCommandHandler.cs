@@ -12,6 +12,7 @@ namespace _5by5.Learning.News.Domain.Commands.v1.User.Delete
         {
             _userRepository = userRepository;
         }
+
         public async Task<Unit> Handle(DeleteUserCommand request, CancellationToken cancellationToken)
         {
             _userRepository.Remove(request.Id);
